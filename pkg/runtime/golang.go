@@ -67,7 +67,7 @@ func (t *golang) FunctionDockerfile(funcCtxDir, version, provider string, w io.W
 
 	buildCon.Run(dockerfile.RunOptions{Command: []string{"apk", "update"}})
 	buildCon.Run(dockerfile.RunOptions{Command: []string{"apk", "upgrade"}})
-	buildCon.Run(dockerfile.RunOptions{Command: []string{"apk", "add", "--no-cache", "git", "gcc", "g++", "make"}})
+	buildCon.Run(dockerfile.RunOptions{Command: []string{"apk", "add", "--no-cache", "git", "gcc", "g++", "make", "tzdata"}})
 	buildCon.Config(dockerfile.ConfigOptions{
 		WorkingDir: "/app/",
 	})

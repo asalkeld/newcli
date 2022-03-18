@@ -58,7 +58,7 @@ CMD ["ts-node", "-T", "functions/list.ts"]`,
 			wantFwriter: `FROM golang:alpine as build
 RUN apk update
 RUN apk upgrade
-RUN apk add --no-cache git gcc g++ make
+RUN apk add --no-cache git gcc g++ make tzdata
 WORKDIR /app/
 COPY go.mod *.sum ./
 RUN go mod download
